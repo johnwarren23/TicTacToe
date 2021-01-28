@@ -5,16 +5,18 @@ import javax.swing.*;
 
 public class TicTacToe implements ActionListener
 {
-	JFrame frame = new JFrame();
-	JPanel titlePanel = new JPanel();
-	JPanel buttonPanel = new JPanel();
-	JLabel textField = new JLabel();
+	
+	
+	
 	JButton[] buttons = new JButton[9];
-	JButton button = new JButton();
+	
 	boolean player1_turn;
 	
 	TicTacToe()
 	{
+	
+		JFrame frame = new JFrame();
+		
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setSize(800, 800);
 		frame.getContentPane().setBackground(new Color(50, 50, 50));
@@ -23,7 +25,8 @@ public class TicTacToe implements ActionListener
 		frame.setVisible(true); //displays the frame
 		//frame.setExtendedState(JFrame.MAXIMIZED_BOTH); //makes the program appear in full screen mode
 		
-
+		
+		JLabel textField = new JLabel();
 		
 		textField.setBackground(new Color(25, 25, 25)); //sets the background color to black
 		textField.setForeground(new Color(25, 255, 0)); //sets the color of the text to green
@@ -32,17 +35,23 @@ public class TicTacToe implements ActionListener
 		textField.setHorizontalAlignment(JLabel.CENTER);
 		textField.setOpaque(true);
 		
+		
+		JPanel titlePanel = new JPanel();
+		
 		titlePanel.setLayout(new BorderLayout());
 		//titlePanel.setBounds(0, 0, 800, 100);
 		titlePanel.add(textField);
 		frame.add(titlePanel, BorderLayout.NORTH);
 		
 		
+		JPanel buttonPanel = new JPanel();
+		
 		buttonPanel.setLayout(new GridLayout(3,3));
 		buttonPanel.setBackground(new Color(150, 150, 150));
 		frame.add(buttonPanel);
 		
 		//Button to reset the game
+		JButton button = new JButton();
 		
 		frame.add(button, BorderLayout.SOUTH);
 		button.setPreferredSize(new Dimension(40, 40));
