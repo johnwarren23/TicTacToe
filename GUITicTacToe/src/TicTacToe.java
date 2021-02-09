@@ -121,7 +121,7 @@ public class TicTacToe implements ActionListener
 						check();
 					}
 				}
-				else if(!player1_turn) //if player one is false then it is player two's turn and "O" will be printed on the panel
+				else //if player one is false then it is player two's turn and "O" will be printed on the panel
 				{
 					if(buttons[i].getText() == "")
 					{
