@@ -15,6 +15,7 @@ public class TicTacToe implements ActionListener
 	TicTacToe()
 	{
 	
+		//creates the frame
 		JFrame frame = new JFrame();
 		
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -25,7 +26,7 @@ public class TicTacToe implements ActionListener
 		frame.setVisible(true); //displays the frame
 		//frame.setExtendedState(JFrame.MAXIMIZED_BOTH); //makes the program appear in full screen mode
 		
-		
+		//creates a new label
 		JLabel textField = new JLabel();
 		
 		textField.setBackground(new Color(25, 25, 25)); //sets the background color to black
@@ -35,20 +36,20 @@ public class TicTacToe implements ActionListener
 		textField.setHorizontalAlignment(JLabel.CENTER);
 		textField.setOpaque(true);
 		
-		
+		//creates a new panel
 		JPanel titlePanel = new JPanel();
 		
 		titlePanel.setLayout(new BorderLayout());
 		//titlePanel.setBounds(0, 0, 800, 100);
-		titlePanel.add(textField);
+		titlePanel.add(textField); //adds the textfield to the title panel
 		frame.add(titlePanel, BorderLayout.NORTH);
 		
-		
+		//creates a button panel
 		JPanel buttonPanel = new JPanel();
 		
-		buttonPanel.setLayout(new GridLayout(3,3));
+		buttonPanel.setLayout(new GridLayout(3,3)); //3 rows, 3 columns
 		buttonPanel.setBackground(new Color(150, 150, 150));
-		frame.add(buttonPanel);
+		frame.add(buttonPanel); //adds the buttonpanel to the frame
 		
 		//Button to reset the game
 		JButton button = new JButton();
@@ -59,13 +60,15 @@ public class TicTacToe implements ActionListener
 		button.setFont(new Font("Ariel", Font.BOLD, 25));
 		button.setFocusable(false);
 		button.addActionListener(this);
+		buttonPanel.add(button);
 		//button.setActionCommand("button");
 		
 		
 		for(int i = 0; i < 9; i++)
 		{
+			//creates an array of buttons - in this case it is 9
 			buttons[i] = new JButton();
-			buttonPanel.add(buttons[i]);
+			buttonPanel.add(buttons[i]); //adds the buttons to the button panel
 			buttons[i].setFont(new Font("MV Boli", Font.BOLD, 120));
 			buttons[i].setFocusable(false);
 			buttons[i].addActionListener(this);
